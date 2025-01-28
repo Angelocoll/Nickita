@@ -16,6 +16,8 @@ html {
   align-items: center;
   overflow: hidden;
   margin: 0;
+
+  padding-top: env(safe-area-inset-top);
 }
 
 .img,
