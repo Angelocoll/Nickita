@@ -6,8 +6,9 @@ import img from "./img/IMG.jpg";
 function App() {
   return (
     <>
-    <div className="shadow"></div>
+    <div className="shadow">
     <div className="img"><img src={img} alt="" /></div>
+    </div>
     
     <Startsidan/>
     </>
