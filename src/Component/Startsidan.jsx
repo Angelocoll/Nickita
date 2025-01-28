@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styling/Startsidan.css";
+import "../Startsidan.css";
 import emailjs from "@emailjs/browser";
 
 function Startsidan() {
