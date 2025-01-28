@@ -17,7 +17,19 @@ html {
   overflow: hidden;
   margin: 0;
 
-  padding-top: env(safe-area-inset-top);
+  padding-top: env(
+    safe-area-inset-top,
+    0px
+  ); /* Säkerställer att innehåll inte täcker systemfältet på iOS */
+  padding-left: env(
+    safe-area-inset-left,
+    0px
+  ); /* Lägg till säkerhetsområde på vänster om du vill */
+  padding-right: env(
+    safe-area-inset-right,
+    0px
+  ); /* Lägg till säkerhetsområde på höger om du vill */
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .img,
