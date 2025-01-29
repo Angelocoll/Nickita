@@ -56,14 +56,21 @@
   background-color: rgba(255, 255, 255, 0.777);
   width: 100%;
   height: 55%;
-  border: 4px solid rgba(255, 192, 203, 0.667);
+  border: 4px solid rgb(255, 192, 203);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  overflow: scroll;
+
   border-radius: 4px;
+}
+.boxes.boxx {
+  background-image: url("./img/IMG.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  position: relative;
 }
 .boxes.box {
   height: 30%;
@@ -111,6 +118,7 @@ p {
   font-size: 0.7rem;
   padding: 0.2rem;
   margin: 0.5rem;
+  z-index: 2;
 }
 h1,
 h2 {
@@ -119,26 +127,31 @@ h2 {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0.2rem;
+  z-index: 2;
 }
 .heart-icon {
-  fill: rgba(201, 201, 201, 0.796);
+  fill: rgba(230, 230, 230, 0.796);
   position: absolute;
   left: -10px;
-  top: -5px;
+  top: -8px;
   stroke: rgba(255, 192, 203, 0.671);
   stroke-width: 2;
+  z-index: 3;
 }
 .heartt-icon {
   fill: rgba(201, 201, 201, 0.796);
+  fill: rgba(230, 230, 230, 0.796);
 
   stroke: rgba(255, 192, 203, 0.671);
   stroke-width: 2;
   position: absolute;
   right: -10px;
-  top: -5px;
+  top: -8px;
+  z-index: 3;
 }
 .hearttt-icon {
   fill: rgba(201, 201, 201, 0.796);
+  fill: rgba(230, 230, 230, 0.796);
   stroke: rgba(255, 192, 203, 0.671);
   stroke-width: 2;
 
@@ -148,6 +161,7 @@ h2 {
 }
 .heartttt-icon {
   fill: rgba(201, 201, 201, 0.796);
+  fill: rgba(230, 230, 230, 0.796);
   stroke: rgba(255, 192, 203, 0.671);
   stroke-width: 2;
 
@@ -193,6 +207,7 @@ input[type="radio"]:checked {
 h3 {
   font-size: 0.8rem;
   margin: 0;
+  z-index: 2;
 }
 
 .modal {
@@ -235,4 +250,12 @@ h3 {
 
 .close-button {
   background: #dc3545;
+}
+.shad {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.515);
 }

@@ -27,9 +27,7 @@ img {
   object-fit: cover;
   object-position: center top; /* Se till att toppen av bilden syns */
   position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
+  z-index: -1;
 }
 
 img {

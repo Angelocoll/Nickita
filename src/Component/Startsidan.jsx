@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Startsidan.css";
 import emailjs from "@emailjs/browser";
+import img from "../img/IMG.jpg";
 
 function Startsidan() {
     const [attendance, setAttendance] = useState("");
@@ -103,7 +104,8 @@ function Startsidan() {
     return (
         <>
         <div className="container">
-            <div className="boxes">
+            <div className="boxes boxx">
+                <div className="shad"></div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 29.6" width="16" height="16" className="heart-icon">
                     <path d="M23.6,0c-2.8,0-5.3,1.1-7.6,3.2C13.7,1.1,11.2,0,8.4,0C3.7,0,0,3.7,0,8.4c0,4.2,3.4,8.2,10.3,13.8 c1.5,1.2,3.2,2.5,5.1,3.9c1.9-1.4,3.6-2.7,5.1-3.9C28.6,16.6,32,12.6,32,8.4C32,3.7,28.3,0,23.6,0z"></path>
                 </svg>

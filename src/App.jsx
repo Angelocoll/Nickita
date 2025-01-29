@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <div className={`shadow`}>
-        <img className="img" src={img} alt="Background" />
+        
       </div>
 
       <Startsidan />
