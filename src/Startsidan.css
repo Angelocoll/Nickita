@@ -128,6 +128,7 @@ h2 {
   margin-bottom: 0;
   padding: 0.2rem;
   z-index: 2;
+  font-weight: bold;
 }
 .heart-icon {
   fill: rgba(230, 230, 230, 0.796);
@@ -180,6 +181,7 @@ label {
 }
 .butt button {
   border: solid 2px black;
+  margin: 4px;
 }
 input {
   margin: 0;
@@ -267,4 +269,5 @@ h3 {
 .boxes.boxx p {
   border-radius: 4px;
   color: white;
+  font-weight: bold;
 }
