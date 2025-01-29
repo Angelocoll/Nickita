@@ -23,7 +23,7 @@ function Startsidan() {
 
         emailjs
             .send(
-                "service_w6gpev9", // Byt ut med ditt EmailJS Service ID
+                "service_faufpvw", // Byt ut med ditt EmailJS Service ID
                 "template_i8698uv", // Byt ut med ditt EmailJS Template ID
                 templateParams,
                 "rbr02god0F_jeuIC7" // Byt ut med din Public Key från EmailJS
