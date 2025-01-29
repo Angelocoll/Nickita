@@ -64,6 +64,7 @@ button {
   position: relative;
   border-radius: 4px;
   font-weight: bold;
+  color: white;
 }
 button:hover {
   background-color: rgb(36, 36, 36);
