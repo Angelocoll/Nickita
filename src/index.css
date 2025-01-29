@@ -10,7 +10,7 @@ html {
 }
 
 #root {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(226, 209, 176);
   height: calc(var(--vh, 1vh) * 100); /* Dynamisk höjd för iOS-problemet */
   width: 100%;
   display: flex;
@@ -29,6 +29,7 @@ img {
   position: absolute;
   top: 0;
   left: 0;
+  display: none;
 }
 
 img {

@@ -31,12 +31,18 @@ function Startsidan() {
             .then(
                 () => {
                     alert("Tack för din anmälan! Ett e-postmeddelande har skickats.");
+
+                    setName("");
+                    setAttendance("");
+                    setEating("");
+                    setAllergi("");
                 },
                 (error) => {
                     console.error("Ett fel uppstod:", error);
                     alert("Kunde inte skicka e-post. Försök igen senare.");
                 }
             );
+
     };
 
     return (
@@ -53,7 +59,8 @@ function Startsidan() {
                 <p>För de som vill äta så börjar kvällen xx:xx för er som vill anlända senare är ni välkommna klockan xx:xx.</p>
                 <p>Det bjuds på välkomstdrink (+shot!) och sen har baren öppet natten lång<br /> (iaf till 03:00)</p>
                 <p>OSA senast xx nedan om du kan komma eller inte Om du önskar mat och i så fall om du har matpreferenser.</p>
-                <p>Infomation <br /><br />Plats: Red Fox - Tema: Black & White<br /><br />När: 19:00 - OSA senast: 6 april</p> 
+                <h3>Infomation</h3>
+                <p>Plats: Red Fox - Tema: Black & White<br /><br />När: 19:00 - OSA senast: 6 april</p> 
             </div>
 
             <div className="boxes box">
