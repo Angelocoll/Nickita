@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Startsidan from "./Component/Startsidan";
 import img from "./img/IMG.jpg";
 
@@ -20,11 +20,10 @@ function App() {
 
   return (
     <>
-      <div className="shadow">
+      <div className={`shadow`}>
         <img className="img" src={img} alt="Background" />
       </div>
 
-      {/* Lägg Startsidan-komponenten */}
       <Startsidan />
     </>
   );
