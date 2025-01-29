@@ -178,6 +178,9 @@ label {
   width: 80%;
   display: flex;
 }
+.butt button {
+  border: solid 2px black;
+}
 input {
   margin: 0;
   margin-right: 8px;
