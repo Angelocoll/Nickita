@@ -95,7 +95,7 @@ p {
 }
 .boxes.boxx {
   background-color: rgb(0, 0, 0);
-  min-height: 95vh;
+  min-height: 85vh;
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
