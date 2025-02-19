@@ -216,7 +216,7 @@ button:hover {
   position: absolute;
   width: 10px;
   height: 10px;
-  background-color: #f00; /* Ändra färgerna */
+  background-color: rgb(0, 0, 0); /* Ändra färgerna */
   bottom: -10px; /* Starta underifrån */
   left: 50%; /* Justera positioneringen */
   animation: confetti-fall 3s linear infinite; /* Animationen */
