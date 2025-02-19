@@ -165,6 +165,8 @@ input {
   background-color: black;
   color: white;
   margin: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 4px;
 }
 input::placeholder {
   color: rgba(255, 255, 255, 0.675);
@@ -179,13 +181,14 @@ input:focus {
 button {
   height: 40px;
   width: 160px;
-  background-color: black;
-  color: white;
+  background-color: rgba(255, 255, 255, 0.649);
+  color: rgb(0, 0, 0);
   border: white 2px solid;
   font-size: 1rem;
   font-family: "Indie Flower", cursive;
   z-index: 99;
   margin: 1rem;
+  border-radius: 0.5rem;
 }
 button:hover {
   cursor: pointer;
