@@ -90,7 +90,7 @@ p {
 }
 .boxes.boxx {
   background-color: rgb(0, 0, 0);
-  height: 65vh;
+  min-height: 65vh;
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
