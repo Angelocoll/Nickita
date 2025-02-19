@@ -169,7 +169,7 @@ function Startsidan() {
             <span className="info">Infomation</span> <br />
             Plats: Red Fox - Tema: Festival<br />
             <br />
-            När: 19:00 - OSA senast: 6 april
+            När: 22:00 - OSA senast: 6 april
           </p>
         </div>
 
