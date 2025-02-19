@@ -1,4 +1,38 @@
 /* Globala inställningar */
+@keyframes flytop {
+  from {
+    transform: translateY(-200px); /* Starta ovanför skärmen */
+    opacity: 0.5; /* Gör elementet osynligt i början */
+  }
+
+  to {
+    transform: translateY(0); /* Slutpositionen är normal position */
+    opacity: 1; /* Gör elementet synligt */
+  }
+}
+@keyframes flybottom {
+  from {
+    transform: translateY(200px); /* Starta ovanför skärmen */
+    opacity: 0.5; /* Gör elementet osynligt i början */
+  }
+
+  to {
+    transform: translateY(0); /* Slutpositionen är normal position */
+    opacity: 1; /* Gör elementet synligt */
+  }
+}
+@keyframes flyside {
+  from {
+    transform: translatex(200px); /* Starta ovanför skärmen */
+    opacity: 0.5; /* Gör elementet osynligt i början */
+  }
+
+  to {
+    transform: translatex(0); /* Slutpositionen är normal position */
+    opacity: 1; /* Gör elementet synligt */
+  }
+}
+
 body,
 html {
   margin: 0;
@@ -9,7 +43,7 @@ html {
 }
 
 #root {
-  background-color: rgb(226, 209, 176);
+  background-color: #b7a5ff;
   width: 100%;
 }
 header {
@@ -25,11 +59,13 @@ header {
   height: auto;
   padding: 1rem;
   padding-top: 2rem;
+  animation: flytop 1s ease-in-out;
 }
 .hidden {
   background-color: #cdc1ff;
   color: #cdc1ff;
   padding: 1rem;
+  animation: flytop 1s ease-in-out;
 }
 h1 {
   margin: 0;
@@ -95,6 +131,7 @@ img {
   align-items: center;
   justify-content: space-evenly;
   height: 40%;
+  animation: flybottom 1s ease-in-out;
 }
 .box div {
   width: 100%;
@@ -148,14 +185,66 @@ button {
   font-size: 1rem;
   font-family: "Indie Flower", cursive;
   z-index: 99;
+  margin: 1rem;
 }
 button:hover {
   cursor: pointer;
   background-color: rgb(28, 28, 28);
   color: rgb(208, 208, 208);
 }
+
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #f00; /* Ändra färgerna */
+  bottom: -10px; /* Starta underifrån */
+  left: 50%; /* Justera positioneringen */
+  animation: confetti-fall 3s linear infinite; /* Animationen */
+  opacity: 0; /* Starta osynligt */
+  border-radius: 50%;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--x), -100vh, 0) rotate(360deg); /* Flyg uppåt */
+    opacity: 0;
+  }
+}
 @media (max-width: 900px) {
   .box {
     flex-direction: column;
+  }
+  .box > div:nth-child(1) {
+    /* Select the first div */
+    order: 2; /* Place it second */
+  }
+
+  .box > div:nth-child(2) {
+    /* Select the second div */
+    order: 1; /* Place it third */
+  }
+
+  .box > div:nth-child(3) {
+    /* Select the third div */
+    order: 3; /* Place it first */
+    display: none;
   }
 }
