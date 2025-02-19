@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../Startsidan.css";
 import emailjs from "@emailjs/browser";
-import img from "../img/IMG.jpg";
+import img from "../img/tes.png";
+import imgen from "../img/nickita.webp";
 
 function Startsidan() {
     const [attendance, setAttendance] = useState("");
@@ -103,27 +104,32 @@ function Startsidan() {
 
     return (
         <>
+        <header><h1>Nickita 30 År</h1> </header>
+        <div className="hidden"><h1 className="hidden">Nickita 30 År</h1></div>
+        
+
         <div className="container">
             <div className="boxes boxx">
+                <img src={img} alt="" />
                 <div className="shad"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 29.6" width="16" height="16" className="heart-icon">
-                    <path d="M23.6,0c-2.8,0-5.3,1.1-7.6,3.2C13.7,1.1,11.2,0,8.4,0C3.7,0,0,3.7,0,8.4c0,4.2,3.4,8.2,10.3,13.8 c1.5,1.2,3.2,2.5,5.1,3.9c1.9-1.4,3.6-2.7,5.1-3.9C28.6,16.6,32,12.6,32,8.4C32,3.7,28.3,0,23.6,0z"></path>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 29.6" width="16" height="16" className="heartt-icon">
-                    <path d="M23.6,0c-2.8,0-5.3,1.1-7.6,3.2C13.7,1.1,11.2,0,8.4,0C3.7,0,0,3.7,0,8.4c0,4.2,3.4,8.2,10.3,13.8 c1.5,1.2,3.2,2.5,5.1,3.9c1.9-1.4,3.6-2.7,5.1-3.9C28.6,16.6,32,12.6,32,8.4C32,3.7,28.3,0,23.6,0z"></path>
-                </svg>
-                <h1>Nickita 30 År</h1>
-                <p>Den 12 Apil är du Välkommen att fira kvällen med mig på xxx klockan xx.</p>
-                <p>För de som vill äta så börjar kvällen xx:xx för er som vill anlända senare är ni välkommna klockan xx:xx.</p>
-                <p>Det bjuds på välkomstdrink (+shot!) och sen har baren öppet natten lång<br /> (iaf till 03:00)</p>
-                <p>OSA senast xx nedan om du kan komma eller inte Om du önskar mat och i så fall om du har matpreferenser.</p>
-                <h3>Infomation</h3>
-                <p>Plats: Red Fox - Tema: Black & White<br /><br />När: 19:00 - OSA senast: 6 april</p> 
+                <p>
+                    Den 12 April är du Välkommen att fira kvällen med mig på xxx klockan xx. 
+                    För de som vill äta så börjar kvällen xx:xx för er som vill anlända senare är ni välkomna klockan xx:xx.
+                    </p>
+                <p>Det bjuds på välkomstdrink (+shot!) och sen har baren öppet natten lång<br /> <span>(iaf till 03:00)</span> <br />OSA senast xx nedan om du kan komma eller inte Om du önskar mat och i så fall om du har matpreferenser.
+                </p>
+                <p><span className="info">Infomation</span> <br />Plats: Red Fox - Tema: Festival<br /><br />När: 19:00 - OSA senast: 6 april</p> 
             </div>
 
             <div className="boxes box">
+                <div>
+                    <img src={imgen} alt="" />
+                    <button onClick={() => { setShowModal(true);}}>
+                    Ta bild
+                </button>
+                </div>
+                <div>
                 <h2>Anmälan</h2>
-              
                 <label htmlFor="kommer_yes">Kommer du?</label>
                 <div>
                     <input
@@ -134,7 +140,7 @@ function Startsidan() {
                         checked={attendance === "yes"}
                         onChange={() => setAttendance("yes")}
                         />
-                    <label htmlFor="kommer_yes">Ja</label>
+                    <label className="lab" htmlFor="kommer_yes">Ja</label>
 
                     <input
                         type="radio"
@@ -144,7 +150,7 @@ function Startsidan() {
                         checked={attendance === "no"}
                         onChange={() => setAttendance("no")}
                         />
-                    <label htmlFor="kommer_no">Nej</label>
+                    <label className="lab" htmlFor="kommer_no">Nej</label>
                 </div>
 
                 <label htmlFor="äter_yes">Ska du äta?</label>
@@ -157,7 +163,7 @@ function Startsidan() {
                         checked={eating === "yes"}
                         onChange={() => setEating("yes")}
                         />
-                    <label htmlFor="äter_yes">Ja</label>
+                    <label className="lab" htmlFor="äter_yes">Ja</label>
 
                     <input
                         type="radio"
@@ -167,7 +173,7 @@ function Startsidan() {
                         checked={eating === "no"}
                         onChange={() => setEating("no")}
                         />
-                    <label htmlFor="äter_no">Nej</label>
+                    <label className="lab" htmlFor="äter_no">Nej</label>
                 </div>
                 <input
                     type="text"
@@ -182,23 +188,15 @@ function Startsidan() {
                     <button onClick={handleSubmit}>Skicka</button>
                 </div>
             </div>
-
-            <div className="buttons">
-                <button onClick={() => { setShowModal(true);}}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 29.6" width="16" height="16" className="hearttt-icon">
-                        <path d="M23.6,0c-2.8,0-5.3,1.1-7.6,3.2C13.7,1.1,11.2,0,8.4,0C3.7,0,0,3.7,0,8.4c0,4.2,3.4,8.2,10.3,13.8 c1.5,1.2,3.2,2.5,5.1,3.9c1.9-1.4,3.6-2.7,5.1-3.9C28.6,16.6,32,12.6,32,8.4C32,3.7,28.3,0,23.6,0z"></path>
-                    </svg>
-                    Ta bild
-                </button>
+                <div>
+                    <img src={imgen} alt="" />
                 <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 29.6" width="16" height="16" className="heartttt-icon">
-                        <path d="M23.6,0c-2.8,0-5.3,1.1-7.6,3.2C13.7,1.1,11.2,0,8.4,0C3.7,0,0,3.7,0,8.4c0,4.2,3.4,8.2,10.3,13.8 c1.5,1.2,3.2,2.5,5.1,3.9c1.9-1.4,3.6-2.7,5.1-3.9C28.6,16.6,32,12.6,32,8.4C32,3.7,28.3,0,23.6,0z"></path>
-                    </svg>
                     Se bilder
                 </button>
-            </div>
-
+                </div>
         </div>
+
+                </div>
             {showModal && (
                 <div className="modal">
                     <div className="modal-content">
