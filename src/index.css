@@ -49,22 +49,27 @@ html {
 header {
   background-color: #cdc1ff;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
   z-index: 100;
   width: 100%;
   position: fixed;
   top: 0;
   height: auto;
-  padding: 1rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   animation: flytop 1s ease-in-out;
+  border-bottom: 4px solid black;
+  box-sizing: border-box;
+}
+header div {
+  font-size: 2.5rem;
+  text-align: center;
 }
 .hidden {
   background-color: #cdc1ff;
   color: #cdc1ff;
-  padding: 1rem;
+  padding-top: 1.1rem;
   animation: flytop 1s ease-in-out;
 }
 h1 {
@@ -73,7 +78,7 @@ h1 {
   font-family: "Academy Engraved LET", serif;
   font-size: 2.5rem;
   font-weight: bolder;
-  justify-items: center;
+  align-self: end;
 }
 p {
   margin: 0;
@@ -131,6 +136,7 @@ img {
   align-items: center;
   justify-content: space-evenly;
   height: 40%;
+  text-align: center;
 }
 .box div {
   width: 100%;

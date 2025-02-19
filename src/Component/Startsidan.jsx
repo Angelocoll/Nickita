@@ -3,6 +3,7 @@ import "../Startsidan.css";
 import emailjs from "@emailjs/browser";
 import img from "../img/tes.png";
 import imgen from "../img/nickita.webp";
+import imgens from "../img/bild.jpg";
 
 function Startsidan() {
   const [attendance, setAttendance] = useState("");
@@ -77,7 +78,7 @@ function Startsidan() {
       )
       .then(
         () => {
-          alert("Tack för din anmälan! Ett e-postmeddelande har skickats.");
+          alert("Jag hoppas att du är redo för en oförglömlig kväll!");
 
           setName("");
           setAttendance("");
@@ -86,7 +87,7 @@ function Startsidan() {
         },
         (error) => {
           console.error("Ett fel uppstod:", error);
-          alert("Kunde inte skicka e-post. Försök igen senare.");
+          alert("Kunde inte skicka. Försök igen senare.");
         }
       );
   };
@@ -132,7 +133,15 @@ function Startsidan() {
   return (
     <>
       <header>
-        <h1>Nickita 30 År</h1>
+        <div>
+      🥂
+        </div>
+        <h1> Nickita 30 År 
+         </h1>
+       <div>
+
+         🥂
+       </div>
       </header>
       <div className="hidden">
         <h1 className="hidden">Nickita 30 År</h1>
@@ -148,15 +157,13 @@ function Startsidan() {
           <img src={img} alt="" />
           <div className="shad"></div>
           <p>
-            Den 12 April är du Välkommen att fira kvällen med mig på xxx klockan
-            xx. För de som vill äta så börjar kvällen xx:xx för er som vill
-            anlända senare är ni välkomna klockan xx:xx.
-          </p>
-          <p>
+            Den 12 April är du Välkommen att fira kvällen med mig på Red fox klockan
+            22:00. För de som vill äta så börjar kvällen 19:00. <br />
             Det bjuds på välkomstdrink (+shot!) och sen har baren öppet natten
             lång<br /> <span>(iaf till 03:00)</span> <br />
-            OSA senast xx nedan om du kan komma eller inte Om du önskar mat och i
-            så fall om du har matpreferenser.
+            OSA senast 6 April nedan om du kan komma eller inte Om du önskar mat och i
+            så fall om du har matpreferenser. <br />
+            Asiatisk buffe står på menyn.
           </p>
           <p>
             <span className="info">Infomation</span> <br />
@@ -209,7 +216,7 @@ function Startsidan() {
               </label>
             </div>
 
-            <label htmlFor="äter_yes">Ska du äta?</label>
+            <label htmlFor="äter_yes">Ska du äta? <br /> (350Kr per person)</label>
             <div>
               <input
                 type="radio"
@@ -254,7 +261,7 @@ function Startsidan() {
           </div>
           {!isMobile && (
             <div>
-              <img src={imgen} alt="" />
+              <img src={imgens} alt="" />
               <button onClick={() => {}}>Se bilder</button>
             </div>
           )}
