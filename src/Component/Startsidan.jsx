@@ -133,15 +133,8 @@ function Startsidan() {
   return (
     <>
       <header>
-        <div>
-      🥂
-        </div>
         <h1> Nickita 30 År 
          </h1>
-       <div>
-
-         🥂
-       </div>
       </header>
       <div className="hidden">
         <h1 className="hidden">Nickita 30 År</h1>
@@ -160,10 +153,10 @@ function Startsidan() {
             Den 12 April är du Välkommen att fira kvällen med mig på Red fox klockan
             22:00. För de som vill äta så börjar kvällen 19:00. <br />
             Det bjuds på välkomstdrink (+shot!) och sen har baren öppet natten
-            lång<br /> <span>(iaf till 03:00)</span> <br />
+            lång<br /> <span>(iaf till 03:00) 🥂</span> <br />
             OSA senast 6 April nedan om du kan komma eller inte Om du önskar mat och i
             så fall om du har matpreferenser. <br />
-            Asiatisk buffe står på menyn.
+            Asiatisk buffe 🍤 står på menyn.
           </p>
           <p>
             <span className="info">Infomation</span> <br />
@@ -295,6 +288,7 @@ function Startsidan() {
           </div>
         </div>
       )}
+      <footer> © 2025 Simple </footer>
     </>
   );
 }
