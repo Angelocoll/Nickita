@@ -196,6 +196,7 @@ function Startsidan() {
       </div>
 
       <div className="container">
+        <div className="filler"></div>
         <div className="boxes boxx">
           <div className="confetti-container" ref={confettiContainerRef}>
             <div className="confetti"></div>

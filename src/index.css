@@ -94,6 +94,14 @@ p {
   flex-direction: column;
   position: relative;
   padding: 1.5rem;
+  position: fixed;
+  top: 90px;
+  width: 100%;
+}
+.filler {
+  width: 100%;
+  height: 90vh;
+  z-index: -1;
 }
 span {
   text-align: center;
@@ -124,10 +132,14 @@ img {
 
 .box {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-evenly;
-  height: 40%;
+  min-height: 90vh;
   text-align: center;
+  background-color: #cdc1ff;
+  z-index: 99;
+  top: 100px;
 }
 .box div {
   width: 100%;
@@ -223,6 +235,9 @@ footer {
   justify-content: center;
   background-color: #000000;
   color: white;
+  position: relative;
+  z-index: 999;
+  top: 40px;
 }
 .modal {
   position: absolute;
