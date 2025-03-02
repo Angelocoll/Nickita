@@ -90,7 +90,7 @@ p {
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
   position: relative;
   padding: 1.5rem;
