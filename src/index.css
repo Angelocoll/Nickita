@@ -9,6 +9,17 @@
     opacity: 1;
   }
 }
+@keyframes flySide {
+  from {
+    transform: translatex(-300px);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
 
 body,
 html {
@@ -22,6 +33,7 @@ html {
 #root {
   background-color: #b7a5ff;
   width: 100%;
+  position: relative;
 }
 header {
   background-color: #cdc1ff;
@@ -56,6 +68,7 @@ h1 {
   font-size: 2.5rem;
   font-weight: bolder;
   align-self: end;
+  padding-top: 10px;
 }
 p {
   margin: 0;
@@ -64,7 +77,7 @@ p {
   color: white;
 
   font-family: "Indie Flower", cursive;
-
+  width: 50%;
   text-align: center;
 }
 .container {
@@ -72,7 +85,7 @@ p {
 }
 .boxes.boxx {
   background-color: rgb(0, 0, 0);
-  min-height: 80vh;
+  min-height: 90vh;
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
@@ -97,12 +110,13 @@ span {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.381);
   z-index: 3;
+  backdrop-filter: blur(2px);
 }
 
 img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   object-position: center;
   position: absolute;
   z-index: 1;
@@ -122,7 +136,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #cdc1ff;
+  background-color: #fafafa;
   font-family: "Indie Flower", cursive;
   font-size: 1.2rem;
   padding-top: 1rem;
@@ -149,7 +163,9 @@ input {
   color: white;
   margin: 0.5rem;
   border-radius: 0.5rem;
-  padding: 4px;
+  padding: 10px;
+  padding-bottom: 6px;
+  padding-top: 6px;
 }
 input::placeholder {
   color: rgba(255, 255, 255, 0.675);
@@ -164,8 +180,8 @@ input:focus {
 button {
   height: 40px;
   width: 160px;
-  background-color: rgba(255, 255, 255, 0.649);
-  color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   border: white 2px solid;
   font-size: 1rem;
   font-family: "Indie Flower", cursive;
@@ -208,6 +224,142 @@ footer {
   background-color: #000000;
   color: white;
 }
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: #cdc1ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  position: fixed;
+  bottom: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 35%;
+  background-color: rgba(0, 0, 0, 0.354);
+  padding: 2rem;
+  max-width: 90%;
+  border-radius: 4px;
+  animation: flySide 1s ease-in-out;
+}
+.modal-content h2 {
+  margin: 0;
+  color: black;
+  font-family: "Academy Engraved LET", serif;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  align-self: end;
+}
+
+.fullscreen-album {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Mörkare bakgrund */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001; /* Högre z-index än modalen */
+}
+
+.album-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto; /* Aktivera scroll om innehållet är för stort */
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+}
+
+.image-container {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* ... (befintlig CSS) */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  background-color: #ffffff;
+  width: 80%;
+  height: 70%;
+  position: relative; /* Viktigt för att positionera stängknappen */
+  overflow: hidden; /* Förhindra att bilden går utanför behållaren */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.box > div:nth-child(1) {
+  background-color: #cdc1ff;
+  backdrop-filter: blur(10px);
+}
+.box > div:nth-child(3) {
+  background-color: #cdc1ff;
+  backdrop-filter: blur(10px);
+}
+
+/* ... (befintlig CSS) */
 
 @keyframes confetti-fall {
   0% {
@@ -228,6 +380,7 @@ footer {
   }
   .box > div:nth-child(1) {
     order: 2;
+    display: none;
   }
 
   .box > div:nth-child(2) {
@@ -237,5 +390,15 @@ footer {
   .box > div:nth-child(3) {
     order: 3;
     display: none;
+  }
+  p {
+    width: 100%;
+  }
+  button {
+    background-color: white;
+    color: black;
+  }
+  .box div {
+    background-color: #cdc1ff;
   }
 }

@@ -17,6 +17,13 @@ function Startsidan() {
   const [message, setMessage] = useState("");
   const confettiContainerRef = useRef(null);
 
+  
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [showFullscreenAlbum, setShowFullscreenAlbum] = useState(false);
+
+ const [firestoreDocs, setFirestoreDocs] = useState([]); 
+   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 900);
@@ -92,6 +99,52 @@ function Startsidan() {
       );
   };
 
+    //hämta data ifrån firestore 
+    const fetchFirestoreData = async () => {
+        //vi sätter loading till true medans vi hämtar data 
+        setLoading(true);
+        try {
+          //skapa en get request ifrån en collection som heter images
+          //loppa igenom datan skapa en kopia på datan  sätt min firestore doc state och fyll den med all data ifrån kopian
+          const snapshot = await db.collection("Images").get();
+          const docs = snapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          setFirestoreDocs(docs);
+        } catch (error) {
+          console.error("Error fetching Firestore documents:", error);
+        } finally {
+          //när allt är slut avslutar med finally och sätt loading tillfalse
+          setLoading(false);
+          setShowFullscreenAlbum(true)
+          console.log("funkar")
+        }
+      };
+
+  const hanteraRadering = async () => {
+    const bekräftelse = window.confirm("Är du säker på att du vill radera ALLA bilder från Cloudinary? Detta kan inte ångras!");
+
+    if (bekräftelse) {
+      try {
+        const response = await fetch('http://localhost:5003/radera-alla-bilder', { // Ersätt med din serverside-URL
+          method: 'DELETE',
+        });
+
+        if (response.ok) {
+          alert("Alla bilder har raderats.");
+        } else {
+          const errorData = await response.json();
+          alert("Ett fel uppstod vid raderingen: " + errorData.message);
+        }
+      } catch (error) {
+        console.error("Fel vid radering:", error);
+        alert("Ett fel uppstod vid raderingen.");
+      }
+    }
+}
+  
+
   const handleUpload = () => {
     if (namee === "" || message === "") {
       alert("Du måste fylla i namn och meddelande");
@@ -106,6 +159,8 @@ function Startsidan() {
         showAdvancedOptions: false,
         autoMinify: true,
         maxFileSize: 2000000,
+        crop: false,
+        thumbnails: false,
       },
       async (error, result) => {
         if (!error && result && result.event === "success") {
@@ -133,7 +188,7 @@ function Startsidan() {
   return (
     <>
       <header>
-        <h1> Nickita 30 År 
+        <h1> Nickita 30 År
          </h1>
       </header>
       <div className="hidden">
@@ -157,6 +212,7 @@ function Startsidan() {
             OSA senast 6 April nedan om du kan komma eller inte Om du önskar mat och i
             så fall om du har matpreferenser. <br />
             Asiatisk buffe 🍤 står på menyn.
+           {/*<button onClick={hanteraRadering}>del</button>*/}
           </p>
           <p>
             <span className="info">Infomation</span> <br />
@@ -168,18 +224,19 @@ function Startsidan() {
 
         <div className="boxes box">
           <div>
-            <img src={imgen} alt="" />
+           {/* <img src={imgen} alt="" />
             <button onClick={() => {
               setShowModal(true);
             }}>
               Ta bild
             </button>
             {isMobile && (
-              <button>
-                Se bilder
+              <button onClick={fetchFirestoreData}>
+                Se Album
               </button>
             )}
-          </div>
+            */}
+          </div> 
           <div>
             <h2>Anmälan</h2>
             <label htmlFor="kommer_yes">Kommer du?</label>
@@ -254,12 +311,55 @@ function Startsidan() {
           </div>
           {!isMobile && (
             <div>
-              <img src={imgens} alt="" />
-              <button onClick={() => {}}>Se bilder</button>
-            </div>
+              {/*<img src={imgens} alt="" />
+              <button onClick={fetchFirestoreData}>Se bilder</button>
+              */}
+            </div> 
           )}
         </div>
       </div>
+
+      {showFullscreenAlbum && (
+        <div className="fullscreen-album">
+          <div className="album-content">
+            {loading ? (
+              <p>Laddar bilder...</p>
+            ) : firestoreDocs.length === 0 ? (
+              <p>Inga bilder ännu.</p>
+            ) : (
+              <div className="image-grid">
+                {firestoreDocs.map((doc) => (
+                  <div key={doc.id} className="image-container">
+                    <img
+                      src={doc.url}
+                      alt={doc.Name}
+                      onClick={() => setSelectedImage(doc.url)}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+            <button
+              onClick={() => setShowFullscreenAlbum(false)}
+              className="close-button"
+            >
+              Stäng
+            </button>
+          </div>
+        </div>
+      )}
+          {selectedImage && (
+        <div className="lightbox">
+            
+          <div className="lightbox-content">
+            <img src={selectedImage} alt="Fullständig bild" />
+            <button onClick={() => setSelectedImage(null)} className="close-button">
+              Stäng
+            </button>
+          </div>
+        </div>
+      )}
+
 
       {showModal && (
         <div className="modal">
@@ -282,7 +382,7 @@ function Startsidan() {
             <button onClick={handleUpload} className="upload-button">
               Ladda upp
             </button>
-            <button onClick={() => setShowModal(false)} className="close-button">
+            <button onClick={() => setShowModal(false)}>
               Avbryt
             </button>
           </div>
