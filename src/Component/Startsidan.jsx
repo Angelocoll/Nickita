@@ -208,7 +208,7 @@ function Startsidan() {
           <div className="shad"></div>
           <p>
             Den 12 April är du Välkommen att fira kvällen med mig på Havspiren klockan
-            20:00. För de som vill äta så börjar kvällen 18:30. <br />
+            20:00. För de som vill äta så börjar kvällen 18:00. <br />
              Baren öppet natten
             lång<br /> <span>(iaf till 01:00) 🥂</span> <br />
             OSA senast 5 April nedan om du kan komma eller inte Om du önskar mat och i
@@ -217,6 +217,7 @@ function Startsidan() {
            {/*<button onClick={hanteraRadering}>del all</button>*/}
           </p>
           <p>
+            <br />
             <span className="info">Infomation</span> <br />
             Plats: Havspiren - Tema: Festival<br />
             <br />
