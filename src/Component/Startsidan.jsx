@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import img from "../img/tes.png";
 import imgen from "../img/nickita.webp";
 import imgens from "../img/bild.jpg";
+import menu from "../img/Nickitas.pdf";
 
 function Startsidan() {
   const [attendance, setAttendance] = useState("");
@@ -206,20 +207,21 @@ function Startsidan() {
           <img src={img} alt="" />
           <div className="shad"></div>
           <p>
-            Den 12 April är du Välkommen att fira kvällen med mig på Red fox klockan
-            22:00. För de som vill äta så börjar kvällen 19:00. <br />
+            Den 12 April är du Välkommen att fira kvällen med mig på Havspiren klockan
+            20:00. För de som vill äta så börjar kvällen 18:30. <br />
             Det bjuds på välkomstdrink (+shot!) och sen har baren öppet natten
-            lång<br /> <span>(iaf till 03:00) 🥂</span> <br />
-            OSA senast 6 April nedan om du kan komma eller inte Om du önskar mat och i
+            lång<br /> <span>(iaf till 01:00) 🥂</span> <br />
+            OSA senast 5 April nedan om du kan komma eller inte Om du önskar mat och i
             så fall om du har matpreferenser. <br />
             Asiatisk buffe 🍤 står på menyn.
            {/*<button onClick={hanteraRadering}>del</button>*/}
           </p>
           <p>
             <span className="info">Infomation</span> <br />
-            Plats: Red Fox - Tema: Festival<br />
+            Plats: Havspiren - Tema: Festival<br />
             <br />
-            När: 22:00 - OSA senast: 6 april
+            När: 20:00 - OSA senast: 5 april
+          <br />
           </p>
         </div>
 
@@ -308,7 +310,10 @@ function Startsidan() {
 
 <div className="butt">
               <button onClick={handleSubmit}>Skicka</button>
+              <button onClick={() => {window.open(menu, "_blank"); 
+              }}>Menu</button>
             </div>
+            <a href="https://www.google.com/maps/place/Restaurang+Havspiren+AB/@59.7561111,18.7202029,17z/data=!3m1!4b1!4m6!3m5!1s0x465ff634e91c5c75:0x486d1dbf30ae7c2c!8m2!3d59.7561111!4d18.7227778!16s%2Fg%2F1hc33ff3m?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D">Hitta hit</a>
           </div>
           {!isMobile && (
             <div>
