@@ -209,12 +209,12 @@ function Startsidan() {
           <p>
             Den 12 April är du Välkommen att fira kvällen med mig på Havspiren klockan
             20:00. För de som vill äta så börjar kvällen 18:30. <br />
-            Det bjuds på välkomstdrink (+shot!) och sen har baren öppet natten
+             Baren öppet natten
             lång<br /> <span>(iaf till 01:00) 🥂</span> <br />
             OSA senast 5 April nedan om du kan komma eller inte Om du önskar mat och i
             så fall om du har matpreferenser. <br />
             Asiatisk buffe 🍤 står på menyn.
-           {/*<button onClick={hanteraRadering}>del</button>*/}
+           {/*<button onClick={hanteraRadering}>del all</button>*/}
           </p>
           <p>
             <span className="info">Infomation</span> <br />
