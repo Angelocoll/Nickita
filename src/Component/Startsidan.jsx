@@ -213,7 +213,7 @@ function Startsidan() {
              Om du vill äta middag med mig så är du välkommen 18:00 och för dig som bara vill festa med mig så är du Välkommen 20:00🥂
              <br />
              <br />
-              Ta med ditt bästa party humör och druck finns att köpa i baren! Jag hoppas att vi ses där!
+              Ta med ditt bästa party humör och dryck finns att köpa i baren! Jag hoppas att vi ses där!
               <br />
               <br />
             Fyll i formuläret nedanför! 
