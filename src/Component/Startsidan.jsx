@@ -207,13 +207,16 @@ function Startsidan() {
           <img src={img} alt="" />
           <div className="shad"></div>
           <p>
-            Den 12 April är du Välkommen att fira kvällen med mig på Havspiren klockan
-            20:00. För de som vill äta så börjar kvällen 18:00. <br />
-             Baren öppet natten
-            lång<br /> <span>(iaf till 01:00) 🥂</span> <br />
-            OSA senast 5 April nedan om du kan komma eller inte Om du önskar mat och i
-            så fall om du har matpreferenser. <br />
-            Asiatisk buffe 🍤 står på menyn.
+            Den 12 April så är du Välkommen att fira min 30 års dag med mig på Havspiren! Klä dig efter just din favorit festival och dansa loss!
+            <br />
+            <br />
+             Om du vill äta middag med mig så är du välkommen 18:00 och för dig som bara vill festa med mig så är du Välkommen 20:00🥂
+             <br />
+             <br />
+              Ta med ditt bästa party humör och druck finns att köpa i baren! Jag hoppas att vi ses där!
+              <br />
+              <br />
+            Fyll i formuläret nedanför! 
            {/*<button onClick={hanteraRadering}>del all</button>*/}
           </p>
           <p>
